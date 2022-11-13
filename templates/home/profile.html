@@ -1,0 +1,52 @@
+{% extends 'common/base.html' %}
+
+{% block start %}
+
+
+
+<section class="section-conten padding-y" style="min-height:84vh">
+
+
+    <div class="card mx-auto" style="max-width: 350px; margin-top:100px;">
+        <div class="card-body">
+            <h4 class="card-title mb-4">User Profile</h4>
+            
+            
+            
+                <div class="form-group">
+                    <input  class="form-control" required placeholder="First Name: {{request.user.first_name}}" name="first_name" type="text" readonly>
+                </div>
+                <div class="form-group">
+                    <input  class="form-control" required placeholder="Last Name: {{request.user.last_name}}" name="last_name" type="text" readonly>
+                </div>
+
+                <div class="form-group">
+                    <input  class="form-control" required placeholder="Email: {{request.user.email}}" name="email" type="text" readonly>
+                </div> <!-- form-group// -->
+                
+
+
+                <div class="form-group">
+                   <a href="{% url 'edit_profile' id=user.id %}"><button type="submit" class="btn btn-primary btn-block"> Edit Profile </button></a>
+                </div> <!-- form-group// -->
+         
+        </div> <!-- card-body.// -->
+    </div> <!-- card .// -->
+
+
+    <br><br>
+
+
+
+</section>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

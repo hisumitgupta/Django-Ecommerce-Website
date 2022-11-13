@@ -1,0 +1,56 @@
+{% extends 'common/base.html' %}
+
+{% block start %}
+
+
+
+<section class="section-conten padding-y" style="min-height:84vh">
+
+
+    <div class="card mx-auto" style="max-width: 350px; margin-top:100px;">
+        <div class="card-body">
+            <h4 class="card-title mb-4">User Profile</h4>
+            <form method="POST" action="">
+                {% csrf_token %}
+                {% include 'common/alert.html' %}
+
+                <div class="form-group">
+                    <input  class="form-control" required placeholder="First Name" name="first_name" type="text" value="{{user.first_name}}">
+                </div>
+                <div class="form-group">
+                    <input  class="form-control" required placeholder="Last Name" name="last_name" type="text" value="{{user.last_name}}">
+                </div>
+
+                <div class="form-group">
+                    <input  class="form-control" required placeholder="Email" name="email" type="text" value="{{user.email}}">
+                </div> <!-- form-group// -->
+                <div class="form-group">
+                    <input class="form-control" required placeholder="Password" name="password" type="password" value="">
+                </div> <!-- form-group// -->
+                
+
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block"> Submit Profile </button>
+                </div> <!-- form-group// -->
+            </form>
+        </div> <!-- card-body.// -->
+    </div> <!-- card .// -->
+
+
+    <br><br>
+
+
+
+</section>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
